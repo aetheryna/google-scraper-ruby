@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :keywords, dependent: :destroy
 
+  has_many :keywords, dependent: :destroy
+
   # the authenticate method from devise documentation
   def self.authenticate(email, password)
     password_param = password
