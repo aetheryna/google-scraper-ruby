@@ -1,0 +1,52 @@
+.header {
+  @include header-gradient;
+
+  padding: 15px 0;
+  background-color: $white-100;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.01);
+  position: relative;
+  top: -30px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    h3,
+    span {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    span {
+      margin-left: 5px;
+      color: $primary;
+      opacity: .8;
+    }
+  }
+
+  &__right {
+    max-width: 100px;
+    width: 100%;
+
+    form {
+      display: flex;
+      justify-content: flex-end;
+      max-width: 100px;
+      width: 100%;
+
+      button {
+        padding: 5px 0;
+      }
+    }
+  }
+}
