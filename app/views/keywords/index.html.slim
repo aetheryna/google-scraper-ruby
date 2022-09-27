@@ -15,7 +15,8 @@ section.keywords
 
       - if user_signed_in?
         .keywords__logout
-          = button_to 'Logout', destroy_user_session_path, method: :delete, class:'button button--secondary header__logout'
+          = button_to 'Logout', destroy_user_session_path, method: :delete,
+            class: 'button button--secondary header__logout'
 
     .keywords__bottom
       = render 'upload-csv-form', keyword: @keyword
