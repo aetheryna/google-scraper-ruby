@@ -1,10 +1,25 @@
-p[style="color: green"]
-  = notice
+section.keywords
+  .container
+    .keywords__top
+      img src="#{image_url 'nimblehq_logo.svg'}" alt="nimblehq"
+      .keywords__hero
+        h1 G-Scraper
+        p Scrape data right off Google!
 
-h1 Keywords
+        .keywords__line
 
-= render 'upload-csv-form', keyword: @keyword
+    .keywords__middle
+      .keywords__user
+        h3 Welcome
+        span #{current_user.email}
 
-#keywords
-  - keyword_presenter.each do |keyword|
-    = render 'keyword', keyword: keyword
+      - if user_signed_in?
+        .keywords__logout
+          = button_to 'Logout', destroy_user_session_path, method: :delete, class:'button button--secondary header__logout'
+
+    .keywords__bottom
+      = render 'upload-csv-form', keyword: @keyword
+
+      #keywords
+        - @keywords.each do |keyword|
+          = render keyword
