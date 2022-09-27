@@ -3,8 +3,8 @@
   justify-content: center;
 
   &__top {
-    margin-top: 10%;
     display: flex;
+    margin-top: 10%;
 
     h1 {
       text-transform: uppercase;
@@ -22,11 +22,11 @@
   }
 
   &__hero {
+    display: flex;
+    position: relative;
+    flex-direction: column;
     margin-left: 40px;
     padding-left: 40px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
 
     p {
       margin-bottom: 0;
@@ -35,18 +35,18 @@
 
   &__line {
     @include secondary-gradient-background;
+    position: absolute;
 
     top: 0;
     left: 0;
-    position: absolute;
-    height: 100%;
     width: 5px;
+    height: 100%;
   }
 
   &__middle {
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
+    margin-top: 60px;
   }
 
   &__user {
@@ -63,8 +63,8 @@
     }
 
     span {
+      opacity: 0.8;
       color: $primary;
-      opacity: .8;
     }
   }
 
@@ -74,8 +74,8 @@
     form {
       display: flex;
       justify-content: flex-end;
-      max-width: 100px;
       width: 100%;
+      max-width: 100px;
 
       button {
         padding: 5px 0;
