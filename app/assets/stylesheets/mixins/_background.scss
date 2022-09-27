@@ -1,3 +1,72 @@
 @mixin primary-gradient-background {
   background: linear-gradient(90deg, $primary-light 0%, $primary 39%, $primary-dark 100%);
 }
+
+@mixin secondary-gradient-background {
+  background: linear-gradient(180deg, $orange 0%, $primary 39%, $pink 100%);
+}
+
+@mixin neumorphism-block {
+  box-shadow:  9px 9px 18px #dbdeeb,
+              -9px -9px 18px #ffffff;
+}
+
+// Only for the Header
+// @mixin header-gradient {
+//   &::before {
+//     content: "";
+//     z-index: -1;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: linear-gradient(-45deg, $orange 0%, $pink 100% );
+//     transform: translate3d(0px, -10px, 0) scale(0.95);
+//     filter: blur(20px);
+//     opacity: var(0.7);
+//     transition: opacity 0.3s;
+//     border-radius: inherit;
+//   }
+
+//   &::after {
+//     content: "";
+//     z-index: -1;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: inherit;
+//     border-radius: inherit;
+//   }
+// }
+
+@mixin header-gradient {
+  &::after {
+    position: absolute;
+    content: "";
+    top: -3px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.9) translateZ(0);
+    filter: blur(15px);
+    background: linear-gradient(
+      to left,
+      #ff5770,
+      #e4428d,
+      #c42da8,
+      #9e16c3,
+      #6501de,
+      #9e16c3,
+      #c42da8,
+      #e4428d,
+      #ff5770
+    );
+    background-size: 200% 200%;
+    animation: animate_glow 1.25s linear infinite;
+  }
+}

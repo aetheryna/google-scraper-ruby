@@ -2,7 +2,9 @@ body {
   background-color: $white-100;
 }
 
-.alert {
-  position: absolute;
-  top: -2px;
+.layout-authentication {
+  .alert {
+    position: absolute;
+    top: -2px;
+  }
 }
