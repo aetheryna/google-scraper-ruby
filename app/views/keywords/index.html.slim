@@ -22,5 +22,5 @@ section.keywords
       = render 'upload-csv-form', keyword: @keyword
 
       #keywords
-        - @keywords.each do |keyword|
-          = render keyword
+        - keyword_presenter.each do |keyword|
+          = render 'keyword', keyword: keyword
