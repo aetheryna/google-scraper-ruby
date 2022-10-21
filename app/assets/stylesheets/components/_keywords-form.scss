@@ -1,46 +1,45 @@
 .keywords-form {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: rem(20px);
 
-  form {
+  &__form {
     @include neumorphism-block;
     display: flex;
     position: relative;
     flex-direction: column;
-    max-width: 450px;
+    max-width: rem(450px);
     transition: $basic-transition;
-    border-radius: 10px;
+    border-radius: rem(10px);
 
     background-color: $white-100;
-
-    p {
-      font-style: italic;
-    }
 
     &:hover {
       border-top: 3px solid $pink;
     }
   }
 
-  &__upload {
-    padding: 15px;
-
-    input {
-      margin-bottom: 20px;
-    }
+  &__placeholder {
+    font-style: italic;
   }
 
-  &__submit {
-    display: flex;
-    margin-top: auto;
+  &__upload {
+    padding: rem(15px);
+  }
 
-    input {
-      width: 100%;
-      height: 30px;
-      border: unset;
-      background-color: $pink;
-      color: $white-100;
-    }
+  &__input-file {
+    margin-bottom: rem(20px);
+    border-bottom: unset;
+  }
+
+  &__submit-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: rem(30px);
+    margin-top: auto;
+    border: unset;
+    background-color: $pink;
+    color: $white-100;
   }
 }

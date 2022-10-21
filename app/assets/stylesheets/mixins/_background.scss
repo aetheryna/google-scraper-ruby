@@ -11,37 +11,6 @@
     -9px -9px 18px #fff;
 }
 
-// Only for the Header
-// @mixin header-gradient {
-//   &::before {
-//     content: "";
-//     z-index: -1;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     background: linear-gradient(-45deg, $orange 0%, $pink 100% );
-//     transform: translate3d(0px, -10px, 0) scale(0.95);
-//     filter: blur(20px);
-//     opacity: var(0.7);
-//     transition: opacity 0.3s;
-//     border-radius: inherit;
-//   }
-
-//   &::after {
-//     content: "";
-//     z-index: -1;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     background: inherit;
-//     border-radius: inherit;
-//   }
-// }
-
 @mixin header-gradient {
   &::after {
     content: '';
