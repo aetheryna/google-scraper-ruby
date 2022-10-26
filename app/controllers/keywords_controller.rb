@@ -2,7 +2,7 @@
 
 class KeywordsController < ApplicationController
   before_action :authenticate_user!
-  # after_action :perform_job, only: :create
+  after_action :perform_job, only: :create
 
   def index
     keywords = current_user.keywords

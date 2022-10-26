@@ -7,7 +7,7 @@ class KeywordsForm
 
   validates_with KeywordsFormValidator
 
-  attr_accessor :file, :user, :keywords
+  attr_accessor :file, :user, :keywords, :keyword_ids
 
   def save(params)
     assign_attributes(params)
@@ -15,7 +15,8 @@ class KeywordsForm
     return false if invalid?
 
     begin
-      Keyword.create(parse_keywords_from_file(keywords)).map { |keyword| keyword['id'] } if parse_keywords(params[:file])
+        @keyword_ids = Keyword.create(parse_keywords_from_file(keywords)).map { |keyword| keyword['id'] } if parse_keywords(params[:file])
+        assign_attributes(keyword_ids: @keyword_ids)
     rescue ActiveRecord::ActiveRecordError => e
       errors.add("Error: #{e}")
     end
