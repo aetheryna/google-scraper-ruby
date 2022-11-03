@@ -2,6 +2,7 @@
 
 class KeywordsController < ApplicationController
   before_action :authenticate_user!
+  after_action :perform_job, only: :create
 
   def index
     keywords = current_user.keywords
@@ -13,8 +14,6 @@ class KeywordsController < ApplicationController
   end
 
   def create
-    keywords_form ||= KeywordsForm.new(user: current_user)
-
     if keywords_form.save({ file: keyword_params, user: current_user })
       flash[:notice] = t('csv.upload_success')
     else
@@ -25,6 +24,14 @@ class KeywordsController < ApplicationController
   end
 
   private
+
+  def keywords_form
+    @keywords_form ||= KeywordsForm.new(user: current_user)
+  end
+
+  def perform_job
+    SearchKeywordsJob.perform_later(keywords_form.keyword_ids)
+  end
 
   def keyword_params
     params.require(:keywords_file)
