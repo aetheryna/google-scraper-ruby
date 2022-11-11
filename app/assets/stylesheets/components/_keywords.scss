@@ -1,0 +1,10 @@
+.keywords {
+  display: flex;
+  justify-content: center;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(60px);
+  }
+}

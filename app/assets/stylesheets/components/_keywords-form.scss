@@ -1,0 +1,45 @@
+.keywords-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(20px);
+
+  &__form {
+    @include neumorphism-block;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: rem(450px);
+    transition: $basic-transition;
+    border-radius: rem(10px);
+
+    background-color: $white-100;
+
+    &:hover {
+      border-top: 3px solid $pink;
+    }
+  }
+
+  &__placeholder {
+    font-style: italic;
+  }
+
+  &__upload {
+    padding: rem(15px);
+  }
+
+  &__input-file {
+    margin-bottom: rem(20px);
+    border-bottom: unset;
+  }
+
+  &__submit-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: rem(30px);
+    margin-top: auto;
+    border: unset;
+    background-color: $pink;
+    color: $white-100;
+  }
+}

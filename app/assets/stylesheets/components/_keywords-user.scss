@@ -1,0 +1,33 @@
+.keywords-user {
+  margin-bottom: rem(30px);
+
+  &__title,
+  &__current-user {
+    font-size: rem(24px);
+    line-height: 1;
+  }
+
+  &__title {
+    margin-bottom: rem(10px);
+  }
+
+  &__current-user {
+    opacity: 0.8;
+    color: $primary;
+  }
+
+  &__logout {
+    margin: rem(20px) 0 rem(40px);
+
+    form {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      max-width: rem(100px);
+    }
+  }
+
+  &__logout-button {
+    padding: 5px 0;
+  }
+}

@@ -1,0 +1,9 @@
+.header {
+  @include header-gradient;
+  position: relative;
+  top: rem(-30px);
+  padding: rem(15px) 0;
+
+  background-color: $white-100;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
+}

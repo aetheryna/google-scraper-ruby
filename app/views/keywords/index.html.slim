@@ -1,10 +1,12 @@
-p[style="color: green"]
-  = notice
+section.keywords
+  .container
+    = render 'keywords-banner'
 
-h1 Keywords
+    .keywords__details
+      = render 'keywords-user'
 
-= render 'upload-csv-form', keyword: @keyword
+    = render 'upload-csv-form', keyword: @keyword
 
-#keywords
-  - keyword_presenter.each do |keyword|
-    = render 'keyword', keyword: keyword
+    #keywords
+      - keyword_presenter.each do |keyword|
+        = render 'keyword', keyword: keyword

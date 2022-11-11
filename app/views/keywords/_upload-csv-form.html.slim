@@ -1,3 +1,9 @@
-= form_with(model: keyword, url: keywords_path) do |form|
-  = form.file_field :keywords_file, accept: 'text/csv', required: true, multipart: true
-  = form.submit 'Submit'
+.keywords-form
+  = form_with(model: keyword, url: keywords_path, class: 'keywords-form__form') do |form|
+    = render 'shared/flash_messages'
+
+    .keywords-form__upload
+      p.keywords-form__placeholder Upload a CSV File
+      = form.file_field :keywords_file, accept: 'text/csv', class: 'keywords-form__input-file', required: true, multipart: true
+
+    = form.submit 'Submit', class: 'keywords-form__submit-button'

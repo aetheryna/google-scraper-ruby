@@ -1,0 +1,8 @@
+.keywords-user
+  h3.keywords-user__title Welcome
+  span.keywords-user__current-user #{current_user.email}
+
+  - if user_signed_in?
+    .keywords-user__logout
+      = button_to 'Logout', destroy_user_session_path, method: :delete,
+        class: 'button button--secondary keywords-user__logout-button'
